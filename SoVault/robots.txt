@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Index
+Sitemap: https://SoVault-file-tools.netlify.app/sitemap.xml

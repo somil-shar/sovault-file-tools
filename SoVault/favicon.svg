@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="foldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#c7d2fe" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="sheetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0e7ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#1e1b4b" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle container -->
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)" filter="url(#shadow)"/>
+
+  <!-- Subtle glow inner border -->
+  <rect x="1.5" y="1.5" width="61" height="61" rx="14.5" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+
+  <!-- Document Sheet -->
+  <g transform="translate(14, 11)">
+    <!-- Back accent fold shadow -->
+    <path d="M 0 4 C 0 1.8 1.8 0 4 0 L 22 0 L 36 14 L 36 38 C 36 40.2 34.2 42 32 42 L 4 42 C 1.8 42 0 40.2 0 38 Z" 
+          fill="url(#sheetGrad)" filter="drop-shadow(0 2px 5px rgba(0,0,0,0.25))"/>
+    
+    <!-- Top-Right Corner Fold -->
+    <path d="M 22 0 L 36 14 L 24 14 C 22.9 14 22 13.1 22 12 Z" 
+          fill="url(#foldGrad)"/>
+    
+    <!-- Fold crease line shadow -->
+    <path d="M 22 0 L 36 14" stroke="#a5b4fc" stroke-width="0.8" opacity="0.6"/>
+
+    <!-- Document Decorative Lines / 'D' element -->
+    <!-- Line 1 -->
+    <rect x="7" y="14" width="10" height="3" rx="1.5" fill="#4f46e5"/>
+    <!-- Line 2 -->
+    <rect x="7" y="21" width="22" height="3" rx="1.5" fill="#6366f1" opacity="0.9"/>
+    <!-- Line 3 -->
+    <rect x="7" y="28" width="17" height="3" rx="1.5" fill="#818cf8" opacity="0.8"/>
+
+    <!-- Sparkle / Star dot on the bottom right -->
+    <circle cx="28" cy="35" r="2" fill="#06b6d4"/>
+  </g>
+</svg>

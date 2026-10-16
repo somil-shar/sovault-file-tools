@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JPG & Images to PDF Converter Online Free | SoVault</title>
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content="Convert photos, JPG, PNG, and WebP images into a single professional PDF document. Fast and completely private.">
+    <meta name="keywords" content="jpg to pdf, convert image to pdf, photos to pdf, pictures to pdf online free">
+    <meta name="author" content="SoVault">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://SoVault.io/jpg-pdf.html">
+    <meta name="theme-color" content="#4f46e5">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://SoVault.io/jpg-pdf.html">
+    <meta property="og:title" content="JPG & Images to PDF Converter Online Free | SoVault">
+    <meta property="og:description" content="Convert photos, JPG, PNG, and WebP images into a single professional PDF document. Fast and completely private.">
+    <meta property="og:image" content="https://SoVault.io/favicon.png">
+    <meta property="og:site_name" content="SoVault">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://SoVault.io/jpg-pdf.html">
+    <meta name="twitter:title" content="JPG & Images to PDF Converter Online Free | SoVault">
+    <meta name="twitter:description" content="Convert photos, JPG, PNG, and WebP images into a single professional PDF document. Fast and completely private.">
+    <meta name="twitter:image" content="https://SoVault.io/favicon.png">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "JPG & Images to PDF Converter Online Free | SoVault",
+      "url": "https://SoVault.io/jpg-pdf.html",
+      "description": "Convert photos, JPG, PNG, and WebP images into a single professional PDF document. Fast and completely private.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+
+<header>
+    <div class="navbar">
+        <a class="logo" href="index.html">
+            <div class="logo-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+            </div>
+            <span>So<span class="logo-badge">Vault</span></span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a class="nav-link" href="index.html">← Back to Home</a></li>
+            <li><a class="nav-link" href="index.html#toolsArea">PDF Tools</a></li>
+            <li><a class="nav-link" href="image-compress.html">Image Tools</a></li>
+            <li><a class="nav-link" href="#features">Features</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <div class="privacy-pill">
+                <div class="privacy-dot"></div>
+                <span>100% Client-Side</span>
+            </div>
+            <a class="btn-header-cta" href="index.html">
+                <span>← Back to Home</span>
+            </a>
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+        <ul class="mobile-nav-links">
+            <li><a class="mobile-nav-link" href="index.html"><span>🏠 Back to Home Dashboard</span><span>→</span></a></li>
+            <li><a class="mobile-nav-link" href="split.html"><span>✂️ PDF Splitter</span><span>→</span></a></li>
+            <li><a class="mobile-nav-link" href="compress.html"><span>📉 PDF Compressor</span><span>→</span></a></li>
+            <li><a class="mobile-nav-link" href="image-compress.html"><span>🖼️ Image Compressor</span><span>→</span></a></li>
+            <li><a class="mobile-nav-link" href="pdf-jpg.html"><span>⚡ PDF to JPG</span><span>→</span></a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="app" style="margin-top: 30px;">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="search-box">
+            <div class="search-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+            <input type="text" id="toolSearch" placeholder="Search 17 tools..." oninput="filterTools(this.value)">
+        </div>
+
+        <div class="category-title">PDF Operations</div>
+        <div class="tool-nav" id="navGroupPdf"></div>
+
+        <div class="category-title">Image Operations</div>
+        <div class="tool-nav" id="navGroupImg"></div>
+
+        <div class="category-title">Converters & ZIP</div>
+        <div class="tool-nav" id="navGroupConv"></div>
+    </aside>
+
+    <main>
+        <!-- BACK TO HOME NAVIGATION BAR -->
+        <div class="back-home-bar">
+            <a href="index.html" class="btn-back-home">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Back to Home</span>
+            </a>
+            <div class="breadcrumb-trail">
+                <a href="index.html">Home</a>
+                <span class="sep">/</span>
+                <span>Converters & ZIP</span>
+                <span class="sep">/</span>
+                <span class="curr-label">Images to PDF</span>
+            </div>
+        </div>
+
+        <!-- TOOL CARD -->
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-header-info">
+                    <h2 id="toolTitle">Images to PDF</h2>
+                    <p id="toolDescription">Convert photos and graphics into a multi-page PDF document.</p>
+                </div>
+                <div class="tool-header-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Dedicated Tool Page</span>
+                </div>
+            </div>
+            <div class="tool-body" id="toolBody"></div>
+        </div>
+    </main>
+</div>
+
+<!-- FEATURE FLASHCARDS -->
+<section class="features-section" id="features">
+    <div class="features-header">
+        <div class="features-badge">✦ Architecture</div>
+        <h2>Enterprise-Grade In-Browser Execution</h2>
+        <p>SoVault runs completely offline inside your web browser. No files are uploaded to any server.</p>
+    </div>
+    <div class="flashcards-grid">
+        <div class="flashcard">
+            <div class="flashcard-top">
+                <h3>100% Client-Side Privacy</h3>
+                <p>Documents are processed in memory and never touch remote servers. Completely confidential.</p>
+            </div>
+            <div class="flashcard-bottom"><span>Zero Cloud Storage</span><span>🛡️ Safe</span></div>
+        </div>
+        <div class="flashcard">
+            <div class="flashcard-top">
+                <h3>Zero Latency Processing</h3>
+                <p>Instant file slicing and export using local CPU hardware acceleration.</p>
+            </div>
+            <div class="flashcard-bottom"><span>Native Speed</span><span>⚡ Fast</span></div>
+        </div>
+        <div class="flashcard">
+            <div class="flashcard-top">
+                <h3>Automated ZIP & PDF Bundling</h3>
+                <p>Process documents in bulk and download clean production outputs instantly.</p>
+            </div>
+            <div class="flashcard-bottom"><span>1-Click Export</span><span>📦 Clean</span></div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-bottom" style="border:0;padding:0;justify-content:center;gap:30px;">
+        <a href="index.html" style="color:var(--primary);font-weight:700;text-decoration:none;">← Back to Home Page</a>
+        <span>•</span>
+        <span>© 2026 SoVault Document Suite</span>
+    </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+<script>
+    initPage('jpg-pdf', false);
+</script>
+</body>
+</html>

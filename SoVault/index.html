@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="MVWTeHzYSBDxelqP9ld3A77W_tQTwLE01m2aRQlvhLg" />
+<title>Free Online PDF Tools & Converter — Merge, Compress, Split PDF | SoVault</title>
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content="100% Free, secure, client-side PDF and image tools. Merge PDF, compress PDF, split PDF pages, extract text, convert images to PDF with zero cloud uploads and total privacy.">
+    <meta name="keywords" content="pdf tools, merge pdf, compress pdf, split pdf, rotate pdf, extract text from pdf, pdf converter, image to pdf, pdf to jpg, free online pdf tools, private pdf editor, pdf tools online free, SoVault">
+    <meta name="author" content="SoVault">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://sovault-file-tools.netlify.app//">
+    <meta name="theme-color" content="#4f46e5">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sovault-file-tools.netlify.app//">
+    <meta property="og:title" content="Free Online PDF Tools & Converter — Merge, Compress, Split PDF | SoVault">
+    <meta property="og:description" content="Merge, compress, split, and convert PDFs directly inside your browser. 100% private, no file uploads to servers, unlimited and free.">
+    <meta property="og:image" content="https://sovault-file-tools.netlify.app//favicon.png">
+    <meta property="og:site_name" content="SoVault">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sovault-file-tools.netlify.app//">
+    <meta name="twitter:title" content="Free Online PDF Tools & Converter | SoVault">
+    <meta name="twitter:description" content="Merge, compress, split, and convert PDFs directly inside your browser. Zero cloud uploads, total privacy.">
+    <meta name="twitter:image" content="https://sovault-file-tools.netlify.app//favicon.png">
+
+    <!-- Structured Data (JSON-LD) for Google Rich Snippets & Search Console -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "@id": "https://sovault-file-tools.netlify.app//#webapp",
+          "name": "SoVault Document Suite",
+          "url": "https://sovault-file-tools.netlify.app//",
+          "description": "Ultra-fast, private, client-side PDF merger, compressor, splitter, and converter with zero server uploads.",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "All",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "PDF Merge & Combine",
+            "PDF Compression",
+            "PDF Page Splitting",
+            "PDF Rotation",
+            "Text Extraction",
+            "Image Compression",
+            "PDF to JPG Conversion",
+            "JPG to PDF Conversion"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://sovault-file-tools.netlify.app//#website",
+          "url": "https://sovault-file-tools.netlify.app//",
+          "name": "SoVault",
+          "description": "Free Online PDF & Image Processing Tools Suite",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://sovault-file-tools.netlify.app//?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://sovault-file-tools.netlify.app//#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Are my PDF files uploaded to any server?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. SoVault operates 100% in-browser using WebAssembly and client-side JavaScript. Your documents never leave your computer or mobile device."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is SoVault free to use without limits?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, SoVault is 100% free with unlimited conversions, zero watermarks, and no registration or subscription required."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I merge, split, and compress PDFs on mobile devices?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, SoVault is fully responsive and optimized for iPhones, Android smartphones, tablets, and desktop computers."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Modular Stylesheet -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Core Document Processing Engines -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="navbar">
+        <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            <div class="logo-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="12" y1="18" x2="12" y2="12"></line>
+                    <line x1="9" y1="15" x2="15" y2="15"></line>
+                </svg>
+            </div>
+            <span>So<span class="logo-badge">Vault</span></span>
+        </div>
+
+        <!-- Desktop Navigation Bar -->
+        <ul class="nav-links">
+            <li><a class="nav-link" href="#toolsArea">PDF Tools</a></li>
+            <li><a class="nav-link" href="image-compress.html">Image Tools</a></li>
+            <li><a class="nav-link" href="pdf-jpg.html">Converters</a></li>
+            <li><a class="nav-link" href="#features">Features</a></li>
+            <li><a class="nav-link" href="#security">Privacy & Security</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <div class="privacy-pill">
+                <div class="privacy-dot"></div>
+                <span>100% Client-Side • Zero Uploads</span>
+            </div>
+
+            <button class="btn-header-cta" onclick="scrollToSection('toolsArea')">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <span>Launch Tools</span>
+            </button>
+
+            <!-- Mobile Hamburger Button -->
+            <button class="mobile-toggle" id="mobileToggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Dropdown Navigation -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <ul class="mobile-nav-links">
+            <li>
+                <a class="mobile-nav-link" href="index.html" onclick="toggleMobileMenu()">
+                    <span>📑 PDF Merger (Home Tool)</span>
+                    <span>→</span>
+                </a>
+            </li>
+            <li>
+                <a class="mobile-nav-link" href="split.html" onclick="toggleMobileMenu()">
+                    <span>✂️ PDF Splitter</span>
+                    <span>→</span>
+                </a>
+            </li>
+            <li>
+                <a class="mobile-nav-link" href="compress.html" onclick="toggleMobileMenu()">
+                    <span>📉 PDF Compressor</span>
+                    <span>→</span>
+                </a>
+            </li>
+            <li>
+                <a class="mobile-nav-link" href="image-compress.html" onclick="toggleMobileMenu()">
+                    <span>🖼️ Image Compressor & Tools</span>
+                    <span>→</span>
+                </a>
+            </li>
+            <li>
+                <a class="mobile-nav-link" href="pdf-jpg.html" onclick="toggleMobileMenu()">
+                    <span>⚡ Converters & ZIP Bundler</span>
+                    <span>→</span>
+                </a>
+            </li>
+            <li>
+                <a class="mobile-nav-link" href="#features" onclick="toggleMobileMenu()">
+                    <span>✦ Features & Architecture</span>
+                    <span>→</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+    <div class="hero-pill">
+        <span>⚡ Private • Hardware Accelerated • No Server Required</span>
+    </div>
+    <h1>The Modern Document Suite <br><span class="gradient-text">Directly in Your Browser.</span></h1>
+    <p>Convert, compress, merge, split, resize, and edit documents with zero cloud latency. Every operation executes in your local memory with enterprise-grade privacy.</p>
+</section>
+
+<!-- ================= METRICS COUNTER STRIP ================= -->
+<div class="stats-strip">
+    <div class="stat-item">
+        <div class="stat-number">17+ Tools</div>
+        <div class="stat-label">PDF & Image Utilities</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">0 Bytes</div>
+        <div class="stat-label">Sent to Remote Servers</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">&lt; 300ms</div>
+        <div class="stat-label">Local Memory Execution</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">100% Free</div>
+        <div class="stat-label">No Login • No Daily Limits</div>
+    </div>
+</div>
+
+<!-- ================= MAIN APP WORKSPACE ================= -->
+<div class="app" id="toolsArea">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="search-box">
+            <div class="search-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+            <input type="text" id="toolSearch" placeholder="Search 17 tools..." oninput="filterTools(this.value)">
+        </div>
+
+        <div class="category-title">PDF Operations</div>
+        <div class="tool-nav" id="navGroupPdf"></div>
+
+        <div class="category-title">Image Operations</div>
+        <div class="tool-nav" id="navGroupImg"></div>
+
+        <div class="category-title">Converters & ZIP</div>
+        <div class="tool-nav" id="navGroupConv"></div>
+    </aside>
+
+    <!-- MAIN TOOL CARD (PRIMARY HOME TOOL: PDF MERGER) -->
+    <main>
+        <div class="tool-card">
+            <div class="tool-header">
+                <div class="tool-header-info">
+                    <h2 id="toolTitle">PDF Merger</h2>
+                    <p id="toolDescription">Combine multiple PDF documents into a single consolidated file.</p>
+                </div>
+                <div class="tool-header-badge" id="toolBadge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <span>Home Tool • In-RAM</span>
+                </div>
+            </div>
+            <div class="tool-body" id="toolBody"></div>
+        </div>
+    </main>
+</div>
+
+<!-- ================= FEATURE FLASHCARDS SHOWCASE ================= -->
+<section class="features-section" id="features">
+    <div class="features-header">
+        <div class="features-badge">✦ Professional Architecture</div>
+        <h2>Engineered for Speed, Privacy & Precision</h2>
+        <p>SoVault brings desktop-grade document manipulation into the browser utilizing WebAssembly and HTML5 Canvas APIs without third-party cloud data transmission.</p>
+    </div>
+
+    <div class="flashcards-grid">
+        <!-- Flashcard 1 -->
+        <div class="flashcard">
+            <div class="flashcard-top">
+                <div class="flashcard-header-row">
+                    <div class="flashcard-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                    <span class="flashcard-tag">SECURITY</span>
+                </div>
+                <h3>100% Client-Side Privacy</h3>
+                <p>Your documents, contracts, and images never leave your computer. Processing happens in sandboxed browser memory, guaranteeing total GDPR, HIPAA, and corporate confidentiality.</p>
+            </div>
+            <div class="flashcard-bottom">
+                <span>Zero Server Uploads</span>
+                <span>🛡️ Verified</span>
+            </div>
+        </div>
+
+        <!-- Flashcard 2 -->
+        <div class="flashcard">
+            <div class="flashcard-top">
+                <div class="flashcard-header-row">
+                    <div class="flashcard-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <span class="flashcard-tag">PERFORMANCE</span>
+                </div>
+                <h3>Zero Latency Processing</h3>
+                <p>No waiting in upload queues or waiting for server rendering. PDF splitting, merging, and image compressions run at native hardware CPU speeds directly on your device.</p>
+            </div>
+            <div class="flashcard-bottom">
+                <span>Near-Instant Execution</span>
+                <span>⚡ &lt; 300ms</span>
+            </div>
+        </div>
+
+        <!-- Flashcard 3 -->
+        <div class="flashcard">
+            <div class="flashcard-top">
+                <div class="flashcard-header-row">
+                    <div class="flashcard-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10 2v20"></path><path d="M14 2v20"></path><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="10" y1="6" x2="14" y2="6"></line><line x1="10" y1="10" x2="14" y2="10"></line></svg>
+                    </div>
+                    <span class="flashcard-tag">AUTOMATION</span>
+                </div>
+                <h3>Smart Batch & ZIP Bundling</h3>
+                <p>Split a 50-page PDF or convert dozens of high-res photos without dealing with popup download blockers. Multi-file jobs are intelligently packaged into an organized ZIP archive.</p>
+            </div>
+            <div class="flashcard-bottom">
+                <span>Automated JSZip Archiving</span>
+                <span>📦 1-Click</span>
+            </div>
+        </div>
+
+        <!-- Flashcard 4 -->
+        <div class="flashcard">
+            <div class="flashcard-top">
+                <div class="flashcard-header-row">
+                    <div class="flashcard-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+                    </div>
+                    <span class="flashcard-tag">FIDELITY</span>
+                </div>
+                <h3>High-Precision Rendering</h3>
+                <p>Maintains exact font glyphs, vector lines, and proportional aspect ratios. Intelligent transparency rendering prevents ugly black backgrounds when converting transparent graphics to JPG.</p>
+            </div>
+            <div class="flashcard-bottom">
+                <span>Pixel-Perfect Output</span>
+                <span>💎 3.0× Scale</span>
+            </div>
+        </div>
+
+        <!-- Flashcard 5 -->
+        <div class="flashcard">
+            <div class="flashcard-top">
+                <div class="flashcard-header-row">
+                    <div class="flashcard-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <span class="flashcard-tag">OFFLINE</span>
+                </div>
+                <h3>Works Completely Offline</h3>
+                <p>Disconnect your internet connection at any time — every single tool will continue to execute seamlessly. Ideal for high-security environments, flights, and remote work without signal.</p>
+            </div>
+            <div class="flashcard-bottom">
+                <span>PWA & Offline Ready</span>
+                <span>📶 No WiFi Needed</span>
+            </div>
+        </div>
+
+        <!-- Flashcard 6 -->
+        <div class="flashcard">
+            <div class="flashcard-top">
+                <div class="flashcard-header-row">
+                    <div class="flashcard-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <span class="flashcard-tag">FREEDOM</span>
+                </div>
+                <h3>Unlimited & Free Forever</h3>
+                <p>No subscriptions, no watermarks, no daily 3-task paywalls, and no email sign-ups required. Process 5MB receipts or 500MB documents without artificial limits.</p>
+            </div>
+            <div class="flashcard-bottom">
+                <span>Zero Paywalls / No Limits</span>
+                <span>🔓 100% Free</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= SEO CONTENT & FAQ ACCORDION SECTION ================= -->
+<section class="features-section" style="background: rgba(15, 23, 42, 0.4); border-top: 1px solid var(--border); padding-top: 50px;">
+    <div class="features-header">
+        <div class="features-badge">✦ Frequently Asked Questions</div>
+        <h2>Everything You Need to Know About SoVault Free PDF Tools</h2>
+        <p>Learn how our 100% private in-browser document processing engine works.</p>
+    </div>
+
+    <div style="max-width: 900px; margin: 0 auto; display: grid; gap: 16px;">
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 26px;">
+            <h3 style="font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px;">What makes SoVault the best free online PDF tool?</h3>
+            <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">Unlike conventional web tools (such as iLovePDF or Smallpdf) that transmit your confidential files over the internet to cloud servers, SoVault runs 100% inside your web browser using HTML5 Canvas and WebAssembly. Your files are never uploaded, stored, or viewed by anyone.</p>
+        </div>
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 26px;">
+            <h3 style="font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px;">How do I merge multiple PDF files together?</h3>
+            <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">Select the PDF Merger tool, drag & drop your PDF documents into the upload area, arrange the page order as needed, and click "Merge & Download". The unified file is compiled instantly on your CPU.</p>
+        </div>
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 26px;">
+            <h3 style="font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px;">Is there any file size limit or watermarks?</h3>
+            <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">Zero limits and zero watermarks. Since processing is executed on your local machine, you can process large PDFs and high-resolution images freely without registration, subscriptions, or credit card requirements.</p>
+        </div>
+
+        <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 26px;">
+            <h3 style="font-size: 17px; font-weight: 700; color: #fff; margin-bottom: 8px;">What PDF tools are included in SoVault?</h3>
+            <p style="font-size: 14px; color: var(--muted); line-height: 1.6;">SoVault includes 17 professional utilities: PDF Merger, PDF Splitter, PDF Compressor, PDF Rotator, Page Extractor, Text Extractor, PDF Metadata Editor, Image Compressor, Image Resizer, Format Converter, Image Cropper, PDF to JPG, Images to PDF, Screenshot to PDF, Images to ZIP, PDF to ZIP, and Print to PDF.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ================= EXTENDED PROFESSIONAL FOOTER ================= -->
+<footer id="security">
+    <div class="footer-container">
+        <div class="footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <h4>
+                    <div class="logo-icon-wrap" style="width:32px;height:32px;border-radius:9px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                        </svg>
+                    </div>
+                    <span>So<span class="logo-badge">Vault</span></span>
+                </h4>
+                <p>SoVault is an open, private browser-based suite for document and image processing. Created with zero third-party telemetry, tracking, or cloud uploads.</p>
+                <div class="privacy-pill" style="display:inline-flex;">
+                    <div class="privacy-dot"></div>
+                    <span>ISO/GDPR Safe • Client In-Memory</span>
+                </div>
+            </div>
+
+            <!-- PDF Column -->
+            <div class="footer-col">
+                <h5>PDF Utilities</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">PDF Merger</a></li>
+                    <li><a href="split.html">PDF Splitter</a></li>
+                    <li><a href="compress.html">PDF Compressor</a></li>
+                    <li><a href="rotate.html">PDF Rotator</a></li>
+                    <li><a href="extract.html">Page Extractor</a></li>
+                    <li><a href="text.html">Text Extractor</a></li>
+                    <li><a href="metadata.html">Metadata Editor</a></li>
+                </ul>
+            </div>
+
+            <!-- Image Column -->
+            <div class="footer-col">
+                <h5>Image Utilities</h5>
+                <ul class="footer-links">
+                    <li><a href="image-compress.html">Image Compressor</a></li>
+                    <li><a href="resize.html">Image Resizer</a></li>
+                    <li><a href="convert.html">Format Converter</a></li>
+                    <li><a href="crop.html">Image Cropper</a></li>
+                    <li><a href="pdf-jpg.html">PDF to High-Res JPG</a></li>
+                    <li><a href="jpg-pdf.html">Images to PDF</a></li>
+                    <li><a href="screenshot.html">Screenshot to PDF</a></li>
+                </ul>
+            </div>
+
+            <!-- Tech Stack & Architecture -->
+            <div class="footer-col">
+                <h5>Security & Core Tech</h5>
+                <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.6;">
+                    Built on modern open standards and compiled WebAssembly runtimes:
+                </p>
+                <div class="tech-badge-list">
+                    <span class="tech-chip">PDF.js 3.11</span>
+                    <span class="tech-chip">PDF-Lib 1.17</span>
+                    <span class="tech-chip">jsPDF 2.5</span>
+                    <span class="tech-chip">JSZip 3.10</span>
+                    <span class="tech-chip">Canvas 2D API</span>
+                    <span class="tech-chip">Zero Telemetry</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                © 2026 SoVault. Engineered for private, local document processing.
+            </div>
+            <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                    <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+                <span>Back to top</span>
+            </button>
+        </div>
+    </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- App Logic -->
+<script src="app.js"></script>
+<script>
+    // Initialize Home page with PDF Merger as the active tool
+    initPage('merge', true);
+</script>
+
+</body>
+</html>
