@@ -6,11 +6,13 @@
 
 ### *Private, Fast, & Browser-Based PDF & File Utility Suite*
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/sovault/deploy-status)](https://docukit-file-tools.netlify.app/)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Privacy: Zero Telemetry](https://img.shields.io/badge/Privacy-Zero%20Telemetry-brightgreen.svg)](#-privacy--security)
 
-**[🌐 Live Demo](https://docukit-file-tools.netlify.app/)** • **[✨ Features](#-key-features)** • **[🛠️ Tech Stack](#️-tech-stack)** • **[🚀 Quickstart](#-getting-started)**
+
+
+**[🌐 Live Demo](https://sovalut-file-tools.netlify.app/)** • **[✨ Features](#-key-features)** • **[🛠️ Tech Stack](#️-tech-stack)** • **[🚀 Quickstart](#-getting-started)**
 
 </div>
 
@@ -53,7 +55,7 @@ SoVault leverages powerful web libraries to achieve desktop-class file manipulat
 | **Frontend Core** | HTML5, CSS3, JavaScript (ES6+), Python |
 | **PDF Processing** | `PDF-Lib` (v1.17), `PDF.js` (v3.11), `jsPDF` (v2.5) |
 | **Archiving & Utilities** | `JSZip` (v3.10), Canvas 2D API |
-| **Deployment & Hosting** | [Netlify](https://docukit-file-tools.netlify.app/) |
+| **Deployment & Hosting** | [Netlify](https://sovault-file-tools.netlify.app/) |
 
 ---
 
